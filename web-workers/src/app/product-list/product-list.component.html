@@ -1,0 +1,17 @@
+<input placeholder="Search" (input)="onSearch($event)" />
+
+
+<select (change)="onCategory($event)">
+<option value="">All</option>
+<option value="Electronics">Electronics</option>
+<option value="Books">Books</option>
+</select>
+
+
+<ul>
+    @for (item of filteredProducts(); track item.id) {
+    <li>{{ item.name }} - ₹{{ item.price }}</li>
+  } @empty {
+    <li>No items found.</li>
+  }
+</ul>

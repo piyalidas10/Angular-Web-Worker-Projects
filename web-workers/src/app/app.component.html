@@ -1,0 +1,12 @@
+<app-image-processor></app-image-processor>
+<app-market-dashboard></app-market-dashboard>
+<app-product-list></app-product-list>
+<button (click)="load()">Load JSON</button>
+
+    @if (loading()) {
+      <p>Parsing...</p>
+    }
+
+    @if (data()) {
+      <pre>{{ data() | json }}</pre>
+    }
